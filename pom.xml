@@ -9,7 +9,7 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.ypi</groupId>
+    <groupId>com.yue</groupId>
     <artifactId>yapi-backend</artifactId>
     <version>0.0.1</version>
     <name>yapi-backend</name>
