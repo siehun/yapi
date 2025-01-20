@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yue</groupId>
-    <artifactId>yapi-client-sdk</artifactId>
+    <artifactId>ysdk</artifactId>
     <version>0.0.1</version>
     <name>yapi-client-sdk</name>
     <description>yapi-client-sdk</description>
