@@ -8,15 +8,20 @@
         <version>2.7.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.yupi</groupId>
-    <artifactId>yapi-interface</artifactId>
+    <groupId>com.yue</groupId>
+    <artifactId>yinterface</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>yapi-interface</name>
-    <description>yapi-interface</description>
+    <name>yinterface</name>
+    <description>yinterface</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.yue</groupId>
+            <artifactId>ysdk</artifactId>
+            <version>0.0.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -41,11 +46,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.yue</groupId>
-            <artifactId>yapi-common</artifactId>
-            <version>0.0.1</version>
         </dependency>
     </dependencies>
 

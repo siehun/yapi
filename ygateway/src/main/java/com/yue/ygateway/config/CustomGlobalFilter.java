@@ -1,11 +1,11 @@
 package com.yue.ygateway.config;
 
-import com.yupi.yuapiclientsdk.utils.SignUtils;
-import com.yupi.yuapicommon.model.entity.InterfaceInfo;
-import com.yupi.yuapicommon.model.entity.User;
-import com.yupi.yuapicommon.service.InnerInterfaceInfoService;
-import com.yupi.yuapicommon.service.InnerUserInterfaceInfoService;
-import com.yupi.yuapicommon.service.InnerUserService;
+import com.yue.ycommon.model.entity.InterfaceInfo;
+import com.yue.ycommon.model.entity.User;
+import com.yue.ycommon.service.InnerInterfaceInfoService;
+import com.yue.ycommon.service.InnerUserInterfaceInfoService;
+import com.yue.ycommon.service.InnerUserService;
+import com.yue.ysdk.utils.SignUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.reactivestreams.Publisher;
@@ -16,7 +16,6 @@ import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferFactory;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
@@ -78,6 +77,7 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         String timestamp = headers.getFirst("timestamp");
         String sign = headers.getFirst("sign");
         String body = headers.getFirst("body");
+        log.info("hello world");
         // todo 实际情况应该是去数据库中查是否已分配给用户
         User invokeUser = null;
         try {

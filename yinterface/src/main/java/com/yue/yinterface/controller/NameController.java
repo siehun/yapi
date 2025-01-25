@@ -1,8 +1,7 @@
 package com.yue.yinterface.controller;
 
-import com.yue.ycommon.model.entity.User;
+import com.yue.ysdk.model.User;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
@@ -11,7 +10,7 @@ public class NameController {
 
     @GetMapping("/get")
     public String getNameByGet(String name, HttpServletRequest request) {
-        System.out.println(request.getHeader("yue"));
+        System.out.println(request.getHeader("yupi"));
         return "GET 你的名字是" + name;
     }
 
