@@ -1,2 +1,2 @@
 # spring boot starter
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.yue.yapiclientsdk.YApiClientConfig
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.yue.ysdk.YuApiClientConfig

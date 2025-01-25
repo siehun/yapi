@@ -10,9 +10,9 @@
     </parent>
     <groupId>com.yue</groupId>
     <artifactId>ysdk</artifactId>
-    <version>0.0.1</version>
-    <name>yapi-client-sdk</name>
-    <description>yapi-client-sdk</description>
+    <version>0.0.2</version>
+    <name>ysdk</name>
+    <description>ysdk</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
