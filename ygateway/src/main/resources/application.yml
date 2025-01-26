@@ -5,7 +5,8 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - AddResponseHeader=source, yupi
+        - AddResponseHeader=gateway, yue
+        - AddRequestHeader=gateway, yue
       routes:
         - id: api_route
           uri: http://localhost:8123
