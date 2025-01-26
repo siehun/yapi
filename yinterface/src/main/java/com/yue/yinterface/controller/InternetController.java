@@ -8,6 +8,7 @@ import com.yue.yinterface.service.AncientpoetryService;
 import com.yue.yinterface.service.FunnyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,11 +19,11 @@ public class InternetController {
     private AncientpoetryService ancientpoetryService;
     @Autowired
     private FunnyService funnyService;
-    @GetMapping("/poetry")
+    @PostMapping("/poetry")
     public BaseResponse<Ancientpoetry> getPoetry() {
         return ResultUtils.success(ancientpoetryService.getPoety());
     }
-    @GetMapping("/funny")
+    @PostMapping("/funny")
     public BaseResponse<Funny> getFunny() {
         return ResultUtils.success(funnyService.getFunny());
     }
