@@ -19,10 +19,10 @@ import org.springframework.stereotype.Service;
         HibernateJpaAutoConfiguration.class})
 @EnableDubbo
 @Service
-public class YGatewayApplication {
+public class YgatewayApplication {
     public static void main(String[] args) {
 
-        ConfigurableApplicationContext context = SpringApplication.run(YGatewayApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(YgatewayApplication.class, args);
     }
 
 }
