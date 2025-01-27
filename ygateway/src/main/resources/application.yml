@@ -8,7 +8,7 @@ spring:
         - AddResponseHeader=gateway, yue
         - AddRequestHeader=gateway, yue
       routes:
-        - id: api_route
+        - id: yue
           uri: http://localhost:8123
           predicates:
             - Path=/api/**

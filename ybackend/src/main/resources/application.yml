@@ -36,7 +36,7 @@ mybatis-plus:
 # 这段配置仅供测试，实际应该根据登录用户获取对应的 ak、sk
 yuapi:
   client:
-    access-key: yupi
+    access-key: yup
     secret-key: abcdefgh
 dubbo:
   application:
