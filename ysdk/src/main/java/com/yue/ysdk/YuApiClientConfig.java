@@ -1,6 +1,6 @@
 package com.yue.ysdk;
 
-import com.yue.ysdk.client.YuApiClient;
+import com.yue.ysdk.client.YApiClient;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Configuration
-@ConfigurationProperties("yuapi.client")
+@ConfigurationProperties("yue.client")
 @Data
 @ComponentScan
 public class YuApiClientConfig {
@@ -22,8 +22,8 @@ public class YuApiClientConfig {
     private String secretKey;
 
     @Bean
-    public YuApiClient yuApiClient() {
-        return new YuApiClient(accessKey, secretKey);
+    public YApiClient yuApiClient() {
+        return new YApiClient(accessKey, secretKey);
     }
 
 }

@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.yue.project.common.*;
 import com.yue.ycommon.model.entity.InterfaceInfo;
 import com.yue.ycommon.model.entity.User;
-import com.yue.ysdk.client.YuApiClient;
+import com.yue.ysdk.client.YApiClient;
 import com.yue.project.annotation.AuthCheck;
 import com.yue.project.constant.CommonConstant;
 import com.yue.project.exception.BusinessException;
@@ -42,7 +42,7 @@ public class InterfaceInfoController {
     private UserService userService;
 
     @Resource
-    private YuApiClient yuApiClient;
+    private YApiClient yuApiClient;
 
     // region 增删改查
 
@@ -288,7 +288,7 @@ public class InterfaceInfoController {
         User loginUser = userService.getLoginUser(request);
         String accessKey = loginUser.getAccessKey();
         String secretKey = loginUser.getSecretKey();
-        YuApiClient tempClient = new YuApiClient(accessKey, secretKey);
+        YApiClient tempClient = new YApiClient(accessKey, secretKey);
         Gson gson = new Gson();
         com.yue.ysdk.model.User user = gson.fromJson(userRequestParams, com.yue.ysdk.model.User.class);
         String usernameByPost = tempClient.getUsernameByPost(user);
@@ -312,7 +312,7 @@ public class InterfaceInfoController {
         User loginUser = userService.getLoginUser(request);
         String accessKey = loginUser.getAccessKey();
         String secretKey = loginUser.getSecretKey();
-        YuApiClient tempClient = new YuApiClient(accessKey, secretKey);
+        YApiClient tempClient = new YApiClient(accessKey, secretKey);
         Gson gson = new Gson();
         com.yue.ysdk.model.User user = gson.fromJson(userRequestParams, com.yue.ysdk.model.User.class);
         String usernameByPost = tempClient.getPoety(user);
@@ -336,7 +336,7 @@ public class InterfaceInfoController {
         User loginUser = userService.getLoginUser(request);
         String accessKey = loginUser.getAccessKey();
         String secretKey = loginUser.getSecretKey();
-        YuApiClient tempClient = new YuApiClient(accessKey, secretKey);
+        YApiClient tempClient = new YApiClient(accessKey, secretKey);
         Gson gson = new Gson();
         com.yue.ysdk.model.User user = gson.fromJson(userRequestParams, com.yue.ysdk.model.User.class);
         String usernameByPost = tempClient.getFunny(user);

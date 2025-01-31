@@ -17,15 +17,16 @@ import static com.yue.ysdk.utils.SignUtils.genSign;
  * 调用第三方接口的客户端
  *
  */
-public class YuApiClient {
+public class YApiClient {
     // 网关地址
-    private static final String GATEWAY_HOST = "http://localhost:8090";
+//    private static final String GATEWAY_HOST = "http://localhost:8090";
+    private static final String GATEWAY_HOST = "http://8.134.203.203:8090";
 
     // 签名认证
     private String accessKey;
     private String secretKey;
 
-    public YuApiClient(String accessKey, String secretKey) {
+    public YApiClient(String accessKey, String secretKey) {
         this.accessKey = accessKey;
         this.secretKey = secretKey;
     }

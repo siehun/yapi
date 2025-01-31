@@ -9,7 +9,8 @@ spring:
         - AddRequestHeader=gateway, yue
       routes:
         - id: yue
-          uri: http://localhost:8123
+#          uri: http://localhost:8123
+          uri: http://8.134.203.203:8123
           predicates:
             - Path=/api/**
 logging:

@@ -1,7 +1,7 @@
 # 公共配置文件
 spring:
   application:
-    name: yuapi-backend
+    name: yapi-backend
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://43.139.105.165:3308/yuapi
@@ -36,7 +36,7 @@ mybatis-plus:
 # 这段配置仅供测试，实际应该根据登录用户获取对应的 ak、sk
 yuapi:
   client:
-    access-key: yup
+    access-key: yue
     secret-key: abcdefgh
 dubbo:
   application:
