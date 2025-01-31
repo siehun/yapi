@@ -78,4 +78,6 @@ http://locahost:8123/Internet/funny
 
 ### 在线平台
 
-![image-20250131212227762](C:/Users/东行/AppData/Roaming/Typora/typora-user-images/image-20250131212227762.png)
+### 平台页面
+
+![img](https://cdn.nlark.com/yuque/0/2025/png/50672796/1738331660112-d7c2ab2a-70ab-4cf4-a347-415357529437.png)
