@@ -5,10 +5,12 @@ import com.yue.ycommon.model.entity.User;
 import com.yue.ycommon.service.InnerInterfaceInfoService;
 import com.yue.ycommon.service.InnerUserInterfaceInfoService;
 import com.yue.ycommon.service.InnerUserService;
+import com.yue.ygateway.filter.YBloomFilter;
 import com.yue.ysdk.utils.SignUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.reactivestreams.Publisher;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -47,10 +49,13 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
     @DubboReference
     private InnerUserInterfaceInfoService innerUserInterfaceInfoService;
 
+    @Autowired
+    private YBloomFilter yBloomFilter;
+
     private static final List<String> IP_WHITE_LIST = Arrays.asList("127.0.0.1");
 
-//    private static final String INTERFACE_HOST = "http://localhost:8123";
-    private static final String INTERFACE_HOST = "http://8.134.203.203:8123";
+    private static final String INTERFACE_HOST = "http://localhost:8123";
+//    private static final String INTERFACE_HOST = "http://8.134.203.203:8123";
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -67,11 +72,16 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         log.info("请求来源地址：" + request.getRemoteAddress());
 
         ServerHttpResponse response = exchange.getResponse();
-        // 2. 访问控制 - 黑白名单
+        // 2. 访问控制 - 黑名单
 //        if (!IP_WHITE_LIST.contains(sourceAddress)) {
 //            response.setStatusCode(HttpStatus.FORBIDDEN);
 //            return response.setComplete();
 //        }
+        if (yBloomFilter.contains(sourceAddress)) {
+            log.info("已经进入黑名单，被布隆过滤器拦截");
+            response.setStatusCode(HttpStatus.FORBIDDEN);
+            return response.setComplete();
+        }
         // 3. 用户鉴权（判断 ak、sk 是否合法）
         HttpHeaders headers = request.getHeaders();
         String accessKey = headers.getFirst("accessKey");
@@ -80,7 +90,6 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         String sign = headers.getFirst("sign");
         String body = headers.getFirst("body");
         log.info("hello world");
-        // todo 实际情况应该是去数据库中查是否已分配给用户
         User invokeUser = null;
         try {
             invokeUser = innerUserService.getInvokeUser(accessKey);

@@ -19,8 +19,8 @@ import static com.yue.ysdk.utils.SignUtils.genSign;
  */
 public class YApiClient {
     // 网关地址
-//    private static final String GATEWAY_HOST = "http://localhost:8090";
-    private static final String GATEWAY_HOST = "http://8.134.203.203:8090";
+    private static final String GATEWAY_HOST = "http://localhost:8090";
+//    private static final String GATEWAY_HOST = "http://8.134.203.203:8090";
 
     // 签名认证
     private String accessKey;

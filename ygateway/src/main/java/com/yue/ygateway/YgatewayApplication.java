@@ -1,6 +1,8 @@
 package com.yue.ygateway;
 
+import com.yue.ygateway.filter.YBloomFilter;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -21,7 +23,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class YgatewayApplication {
     public static void main(String[] args) {
-
         ConfigurableApplicationContext context = SpringApplication.run(YgatewayApplication.class, args);
     }
 
